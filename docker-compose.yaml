@@ -1,0 +1,21 @@
+services:
+  rmq0: &rabbitmq
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "15673:15672"
+      - "15693:15692"
+    hostname: rmq0
+  rmq1:
+    << : *rabbitmq
+    hostname: rmq1
+    ports:
+      - "15674:15672"
+      - "15694:15692"
+  rmq2:
+    << : *rabbitmq
+    hostname: rmq2
+    ports:
+      - "15675:15672"
+      - "15695:15692"

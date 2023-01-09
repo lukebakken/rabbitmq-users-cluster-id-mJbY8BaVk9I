@@ -7,6 +7,8 @@ services:
       - "15673:15672"
       - "15693:15692"
     hostname: rmq0
+    environment:
+      RABBITMQ_ERLANG_COOKIE: rabbitmq-cluster
   rmq1:
     << : *rabbitmq
     hostname: rmq1
